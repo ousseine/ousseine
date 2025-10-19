@@ -1,0 +1,487 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Hero Section -->
+    <section id="hero" class="relative py-32 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50/50 to-emerald-50/30"></div>
+        <div class="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="z-10">
+                    <twig:badge title="Sites web modernes & performants" icon="mdi:sparkles" />
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-tight">
+                        Ensemble, donnons vie à votre présence web
+                        <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 bg-clip-text text-transparent"> sur mesure</span>
+                        <br />
+                        en 48h
+                    </h1>
+                    <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
+                        Transformez vos idées en un site internet qui attire, engage et convertit.
+                        Design unique, code soigné, livraison rapide.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <twig:button variant="default" label="Démarrer mon projet" icon="mdi:arrow-right" />
+                        <twig:button variant="outline" label="Voir nos réalisations" />
+                    </div>
+                    <div class="mt-12 flex items-center space-x-8">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-slate-900">250+</div>
+                            <div class="text-sm text-slate-600">Projets livrés</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-slate-900">48h</div>
+                            <div class="text-sm text-slate-600">Livraison moyenne</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-slate-900">99%</div>
+                            <div class="text-sm text-slate-600">Clients satisfaits</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative lg:ml-8">
+                    <div class="relative z-10 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1630522790858-50b4ef44944b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600&h=400" class="w-full h-auto rounded-2xl shadow-2xl" alt="Mockup de site web moderne">
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full opacity-20 animate-pulse"></div>
+                    <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-20 animate-bounce"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <twig:badge title="Pourquoi nous choisir" class="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-0 px-4 py-2" />
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+                    L'excellence web à votre portée
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    Nous combinons créativité, technologie et stratégie pour créer des expériences web
+                    qui marquent et qui performent.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <twig:card class="group p-8 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon
+                                    name="mynaui:zap"
+                                    class="size-10 text-white"
+                                    style="width: 4em; height: 4em;"
+                            />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Développement Express</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Sites web livrés en 48h avec un design sur mesure qui convertit
+                        </p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group p-8 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon
+                                    name="mdi:rocket-launch"
+                                    class="size-10 text-white"
+                                    style="width: 4em; height: 4em;"
+                            />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Performance Optimale</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Code moderne, rapide et optimisé pour le SEO et les conversions
+                        </p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group p-8 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon
+                                    name="mdi:users"
+                                    class="size-10 text-white"
+                                    style="width: 4em; height: 4em;"
+                            />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Support Dédié</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Un suivi personnalisé pour faire évoluer votre présence en ligne
+                        </p>
+                    </twig:block>
+                </twig:card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <twig:badge title="Nos services" class="mb-6 bg-gradient-to-r from-emerald-100 to-blue-100 text-emerald-700 border-0 px-4 py-2" />
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+                    Des solutions web sur mesure
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    Du simple site vitrine à l'application web complexe, nous avons la solution
+                    parfaite pour votre projet.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <twig:card
+                        class="group overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm hover:-translate-y-2"
+                        image="https://images.unsplash.com/photo-1618788372246-79faff0c3742?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&h=300">
+                    <twig:block name="content">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-slate-900">Landing Page Pro</h3>
+                            <twig:badge title="À partir de 890€" class="bg-gradient-to-r from-emerald-500 to-blue-500 text-white border-0 px-3 py-1" />
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Design unique
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Responsive
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                SEO optimisé
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Formulaires
+                            </li>
+                        </ul>
+                        <twig:button label="En savoir plus" icon="mdi:arrow-right" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300" />
+                    </twig:block>
+                </twig:card>
+                <twig:card
+                        class="group overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm hover:-translate-y-2"
+                        image="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&h=300">
+                    <twig:block name="content">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-slate-900">Site Vitrine Premium</h3>
+                            <twig:badge title="À partir de 1590€" class="bg-gradient-to-r from-emerald-500 to-blue-500 text-white border-0 px-3 py-1" />
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Multi-pages
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                CMS intégré
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Analytics
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Support 3 mois
+                            </li>
+                        </ul>
+                        <twig:button label="En savoir plus" icon="mdi:arrow-right" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300" />
+                    </twig:block>
+                </twig:card>
+                <twig:card
+                        class="group overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm hover:-translate-y-2"
+                        image="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&h=300">
+                    <twig:block name="content">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-slate-900">E-commerce Starter</h3>
+                            <twig:badge title="À partir de 2890€" class="bg-gradient-to-r from-emerald-500 to-blue-500 text-white border-0 px-3 py-1" />
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Boutique en ligne
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Paiements sécurisés
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Gestion stock
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Formation
+                            </li>
+                        </ul>
+                        <twig:button label="En savoir plus" icon="mdi:arrow-right" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300" />
+                    </twig:block>
+                </twig:card>
+                <twig:card
+                        class="group overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm hover:-translate-y-2"
+                        image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&h=300">
+                    <twig:block name="content">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-bold text-slate-900">Application Web</h3>
+                            <twig:badge title="Sur devis" class="bg-gradient-to-r from-emerald-500 to-blue-500 text-white border-0 px-3 py-1" />
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Dashboard
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                API custom
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Base de données
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" style="width: 1.5em; height: 1.5em;" />
+                                Maintenance
+                            </li>
+                        </ul>
+                        <twig:button label="En savoir plus" icon="mdi:arrow-right" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300" />
+                    </twig:block>
+                </twig:card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <twig:badge title="Témoignages clients" class="mb-6 bg-gradient-to-r from-yellow-100 to-orange-100 text-yellow-700 border-0 px-4 py-2" />
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+                    Ils nous font confiance
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    Découvrez ce que nos clients disent de leur expérience avec DevCraft.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <twig:card class="p-8 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50" class_content="p-8">
+                    <twig:block name="content">
+                        <div class="flex items-center mb-8">
+                            <img src="https://images.unsplash.com/photo-1745441888183-c217893cfe48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=100&h=100" alt="image" class="size-16 rounded-full object-cover mr-4 ring-4 ring-blue-100" />
+                            <div>
+                                <h4 class="font-bold text-slate-900">Sarah Dupont</h4>
+                                <p class="text-sm text-slate-600">Fondatrice, TechStartup</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-6">
+                            <twig:ux:icon name="mdi:star" class="size-5 text-yellow-400 fill-current" style="width: 1.5em; height: 1.5em;" />
+                            <twig:ux:icon name="mdi:star" class="size-5 text-yellow-400 fill-current" style="width: 1.5em; height: 1.5em;" />
+                            <twig:ux:icon name="mdi:star" class="size-5 text-yellow-400 fill-current" style="width: 1.5em; height: 1.5em;" />
+                            <twig:ux:icon name="mdi:star" class="size-5 text-yellow-400 fill-current" style="width: 1.5em; height: 1.5em;" />
+                        </div>
+                        <p class="text-slate-700 italic leading-relaxed">
+                            "En 48h, j'avais un site magnifique qui a doublé mes conversions. Service exceptionnel !"
+                        </p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="p-8 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50" class_content="p-8">
+                    <twig:block name="content">
+                        <div class="flex items-center mb-8">
+                            <img src="https://images.unsplash.com/photo-1634133472760-e5c2bd346787?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=100&h=100" alt="image" class="size-16 rounded-full object-cover mr-4 ring-4 ring-blue-100" />
+                            <div>
+                                <h4 class="font-bold text-slate-900">Marc Laurent</h4>
+                                <p class="text-sm text-slate-600">Directeur Marketing</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-6">
+                            <twig:ux:icon name="mdi:star" class="size-5 text-yellow-400 fill-current" style="width: 1.5em; height: 1.5em;" />
+                            <twig:ux:icon name="mdi:star" class="size-5 text-yellow-400 fill-current" style="width: 1.5em; height: 1.5em;" />
+                            <twig:ux:icon name="mdi:star" class="size-5 text-yellow-400 fill-current" style="width: 1.5em; height: 1.5em;" />
+                            <twig:ux:icon name="mdi:star" class="size-5 text-yellow-400 fill-current" style="width: 1.5em; height: 1.5em;" />
+                        </div>
+                        <p class="text-slate-700 italic leading-relaxed">
+                            "Design moderne, code propre et équipe réactive. Exactement ce qu'on cherchait."
+                        </p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="p-8 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50" class_content="p-8">
+                    <twig:block name="content">
+                        <div class="flex items-center mb-8">
+                            <img src="https://images.unsplash.com/photo-1696219448339-ce614b610462?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=100&h=100" alt="image" class="size-16 rounded-full object-cover mr-4 ring-4 ring-blue-100" />
+                            <div>
+                                <h4 class="font-bold text-slate-900">Julie Martin</h4>
+                                <p class="text-sm text-slate-600">Entrepreneuse</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-6">
+                            <twig:ux:icon name="mdi:star" class="size-5 text-yellow-400 fill-current" style="width: 1.5em; height: 1.5em;" />
+                            <twig:ux:icon name="mdi:star" class="size-5 text-yellow-400 fill-current" style="width: 1.5em; height: 1.5em;" />
+                            <twig:ux:icon name="mdi:star" class="size-5 text-yellow-400 fill-current" style="width: 1.5em; height: 1.5em;" />
+                            <twig:ux:icon name="mdi:star" class="size-5 text-yellow-400 fill-current" style="width: 1.5em; height: 1.5em;" />
+                        </div>
+                        <p class="text-slate-700 italic leading-relaxed">
+                            "Ils ont transformé mon idée en réalité digitale. ROI immédiat sur mon investissement."
+                        </p>
+                    </twig:block>
+                </twig:card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <twig:badge title="Tarifs transparents" class="mb-6 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 border-0 px-4 py-2" />
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+                    Des prix justes, sans surprise
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    Choisissez la formule qui correspond à vos besoins. Tous nos tarifs sont fixes,
+                    sans frais cachés.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <twig:card class="relative p-8 hover:shadow-2xl transition-all duration-500 border-0 bg-white hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold mb-3 text-slate-900">Starter</h3>
+                            <div class="mb-3">
+                                <span class="text-4xl font-bold text-slate-900">890€</span>
+                                <span class="text-slate-600"> /projet</span>
+                            </div>
+                            <p class="text-slate-600">Parfait pour débuter</p>
+                        </div>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-300" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-700'>Landing page responsive</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-300" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-700'>Design sur mesure</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-300" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-700'>Optimisations SEO de base</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-300" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-700'>Livraison en 48h</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-300" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-700'>2 révisions incluses</span>
+                            </li>
+                        </ul>
+                        <twig:button label="Commencer maintenant" class="w-full transition-all duration-300 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white" />
+                    </twig:block>
+                </twig:card>
+                <twig:card class="relative p-8 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-blue-600 to-purple-600 text-white scale-105 transform">
+                    <twig:block name="badge">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <twig:badge title="Le plus populaire" icon="mdi:sparkles" class="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-6 py-2 shadow-lg" />
+                        </div>
+                    </twig:block>
+                    <twig:block name="content">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold mb-3 text-slate-900">Business</h3>
+                            <div class="mb-3">
+                                <span class="text-4xl font-bold text-slate-900">1590€</span>
+                                <span class="text-slate-600"> /projet</span>
+                            </div>
+                            <p class="text-slate-600">Le plus populaire</p>
+                        </div>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-300" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-100'>Site multi-pages complet</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-300" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-100'>CMS intégré (facile à gérer)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-300" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-100'>SEO avancé + Analytics</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-300" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-100'>Formulaires intelligents</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-300" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-100'>Support 3 mois inclus</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-300" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-100'>Formation personnalisée</span>
+                            </li>
+                        </ul>
+                        <twig:button label="Choisir business" class="w-full transition-all duration-300 bg-white text-blue-600 hover:bg-blue-50" />
+                    </twig:block>
+                </twig:card>
+                <twig:card class="relative p-8 hover:shadow-2xl transition-all duration-500 border-0 bg-white hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold mb-3 text-slate-900">Enterprise</h3>
+                            <div class="mb-3">
+                                <span class="text-4xl font-bold text-slate-900">Sur devis</span>
+                                <span class="text-slate-600"></span>
+                            </div>
+                            <p class="text-slate-600">Solution sur mesure</p>
+                        </div>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-500" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-700'>Développement personnalisé</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-500" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-700'>Intégrations API avancées</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-500" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-700'>Architecture scalable</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-500" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-700'>Support prioritaire</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-500" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-700'>Maintenance continue</span>
+                            </li>
+                            <li class="flex items-center">
+                                <twig:ux:icon name="mdi:check" class="w-5 h-5 mr-3 flex-shrink-0 text-emerald-500" style="width: 1.5em; height: 1.5em;" />
+                                <span class='text-blue-700'>Équipe dédiée</span>
+                            </li>
+                        </ul>
+                        <twig:button label="Discutons de votre projet" class="w-full transition-all duration-300 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white" />
+                    </twig:block>
+                </twig:card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="contact" class="py-24 bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">
+                Prêt à révolutionner votre présence web ?
+            </h2>
+            <p class="text-xl text-blue-100 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Rejoignez plus de 250 entrepreneurs qui ont fait confiance à DevCraft
+                pour propulser leur business en ligne.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <twig:button label="Obtenir un devis gratuit" icon="mdi:arrow-right" class="bg-white text-blue-600 hover:bg-blue-50 px-12 py-6 text-lg shadow-2xl" />
+                <twig:button label="Voir notre portfolio" icon="mdi:globe" class="bg-white flex-reverse text-blue-600 hover:bg-blue-50 px-12 py-6 text-lg shadow-2xl" />
+            </div>
+        </div>
+    </section>
+{% endblock %}

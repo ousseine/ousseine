@@ -1,3 +1,10 @@
+home:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    methods: GET
+    defaults:
+        template: 'home.html.twig'
+
 controllers:
     resource:
         path: ../src/Controller/
