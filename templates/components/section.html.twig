@@ -1,0 +1,31 @@
+{% props
+    name = null,
+    class = '',
+    badge_title = null,
+    title = null,
+    description = null,
+    content_class = null,
+    header = false,
+    text_class = null,
+%}
+
+<section id="{{ name }}" class="{{ class }}">
+    {% block top %}{% endblock %}
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {% if header %}
+            <div class="text-center px-4 md:px-0 {{ content_class ? 'mb-20' }}">
+                {% if badge_title %}
+                    <twig:badge title="{{ badge_title }}" class="mb-6 px-4 py-2" />
+                {% endif %}
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 {{ text_class }}">{{ title }}</h2>
+                {% if description %}
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed {{ text_class }}">{{ description }}</p>
+                {% endif %}
+                {% block actions %}{% endblock %}
+            </div>
+        {% endif %}
+        <div class="{{ content_class }}">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</section>

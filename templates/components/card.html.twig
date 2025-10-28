@@ -8,17 +8,17 @@
     badge_class = null,
 %}
 
-<div class="text-card-foreground flex flex-col gap-6 rounded-xl group p-8 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50 {{ class }}">
+<div class="flex flex-col gap-6 rounded-lg border-0 transition-all duration-500 hover:shadow-xl {{ class }}">
     {% if image %}
         <div class="aspect-video overflow-hidden">
             <img src="{{ image }}"
                  alt="image"
-                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                 class="w-full h-full object-cover rounded-t-lg group-hover:scale-110 transition-transform duration-500"
             >
         </div>
     {% endif %}
     {% block badge %}{% endblock %}
-    <div class="[&:last-child]:pb-6 {{ class_content }}">
+    <div class="{{ class_content }}">
         {% block content %}{% endblock %}
     </div>
 </div>
