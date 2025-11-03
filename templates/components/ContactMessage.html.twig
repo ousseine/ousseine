@@ -1,0 +1,24 @@
+<div {{ attributes }}>
+    {{ form_start(form, {
+        attr: {
+            novalidate: true,
+            'data-action': 'live#action:prevent',
+            'data-live-action-param': 'save',
+            'class': 'space-y-4'
+        }
+    }) }}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {{ form_row(form.name) }}
+            {{ form_row(form.email) }}
+        </div>
+        {{ form_row(form.subject) }}
+        {{ form_row(form.message) }}
+
+        <button type="submit"
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:shadow-md transition-all duration-300 cursor-pointer text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 w-full py-2.5"
+        >
+            <twig:ux:icon name="streamline:send-email-solid" class="size-5 shrink-0" />
+            Envoyé le message
+        </button>
+    {{ form_end(form) }}
+</div>

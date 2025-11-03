@@ -320,29 +320,7 @@
     <!-- Contact Section -->
     <twig:section name="contact" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50/30" header="true" badge_title="contact" title="Discutons de votre projet" description="Un projet en tête, besoin de conseil, une réponse en terme de production ou de délai ? N'hésitez pas à prendre contacter." content_class="mx-auto max-w-4xl text-card-foreground flex flex-col gap-6 rounded-xl p-8 md:p-12 border-0 shadow-lg bg-white">
         <twig:block name="content">
-            <form class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Votre nom</label>
-                        <input type="text" id="name">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Votre email</label>
-                        <input type="text" id="email">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <label for="subject" class="block text-sm font-medium text-slate-700 mb-1">Sujet</label>
-                        <input type="text" id="subject">
-                    </div>
-                </div>
-                <div>
-                    <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Message</label>
-                    <textarea name="message" id="message" rows="10" class="w-full min-h-[150px] !py-2"></textarea>
-                </div>
-                <twig:button type="submit" label="Envoyer le message" icon="streamline:send-email-solid" class="w-full py-2.5 px-8 flex-row-reverse" />
-            </form>
+            {{ component('ContactMessage') }}
         </twig:block>
     </twig:section>
 
