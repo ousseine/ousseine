@@ -4,10 +4,10 @@ server 	:= 'ousseine'
 domain 	:= 'sites/ousseine.fr'
 sc		:= php bin/console
 
-deploy:
+deploy: compile
 	ssh $(server) 'cd $(domain) && git pull origin master && make install'
 
-install: vendor/autoload.php compile
+install: vendor/autoload.php
 	#$(sc) doctrine:migrations:migrate -n
 	$(sc) importmap:install
 	php composer dump-env prod
