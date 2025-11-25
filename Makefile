@@ -8,7 +8,7 @@ deploy:
 	ssh $(server) 'cd $(domain) && git pull origin master && make install'
 
 install: vendor/autoload.php compile
-	$(sc) doctrine:migrations:migrate -n
+	#$(sc) doctrine:migrations:migrate -n
 	$(sc) importmap:install
 	php composer dump-env prod
 	APP_ENV=prod APP_DEBUG=0 $(sc) cache:clear
