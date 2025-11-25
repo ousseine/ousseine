@@ -4,7 +4,6 @@ namespace App\Twig\Components;
 
 use App\Dto\ContactDto;
 use App\Form\ContactFormType;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Mailer\MailerInterface;
@@ -27,7 +26,7 @@ final class ContactMessage extends AbstractController
 
     public function __construct(
         private readonly MailerInterface $mailer,
-        private readonly EntityManagerInterface $em,
+        private readonly string $adminEmail
     ){
     }
 
@@ -52,7 +51,7 @@ final class ContactMessage extends AbstractController
 
         $this->mailer->send( (new Email())
             ->from(new Address($form->get('email')->getData(), $form->get('name')->getData()))
-            ->to('conatct@symfony.com')
+            ->to($this->adminEmail)
             ->subject($form->get('subject')->getData())
             ->text($form->get('message')->getData())
         );
