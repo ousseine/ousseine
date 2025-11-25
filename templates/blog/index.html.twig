@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title 'Mon blog' %}
+{% block admin_class 'flex flex-col' %}
+
+{% block body %}
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-200 sticky top-0 z-50 py-4">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <a href="{{ path('home') }}" class="flex items-center space-x-2">
+                <div class="size-8">
+                    <img src="{{ asset('images/logo.png') }}" class="size-full object-cover" alt="logo">
+                </div>
+                <span class="text-xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Ousseine</span>
+            </a>
+            <twig:button type="link" link="{{ path('blog') }}" size="sm" label="Blog" />
+        </div>
+    </nav>
+
+    <div class="w-full h-full flex-1 py-16 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div class="flex items-center flex-col w-full text-center space-y-4">
+            <p class="text-2xl font-semibold">Cette page n’est pas encore disponible</p>
+            <p class="text-sm font-light">
+                Nous travaillons actuellement à sa construction afin de vous offrir une expérience complète très bientôt. Merci pour votre patience !
+            </p>
+        </div>
+    </div>
+
+    <twig:footer />
+{% endblock %}

@@ -1,0 +1,49 @@
+<footer class="bg-slate-900 text-slate-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 py-24">
+            <div>
+                <div class="flex items-center gap-x-2 mb-6">
+                    <div class="size-10">
+                        <img src="{{ asset('images/logo.png') }}" alt="logo" class="size-full object-cover" />
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-white">Ousseine</span>
+                        <p class="text-xs text-slate-400">Développeur Web</p>
+                    </div>
+                </div>
+                <p class="text-slate-400 leading-relaxed">
+                    Votre partenaire de confiance pour créer des solutions web modernes
+                    et professionnelles qui marquent les esprits.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Navigation</h4>
+                <ul class="space-y-3">
+                    <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                    <li><a href="#about" class="hover:text-white transition-colors">À propos</a></li>
+                    <li><a href="#skills" class="hover:text-white transition-colors">Compétences</a></li>
+                    <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div class="space-y-2">
+                <h4 class="text-white font-bold mb-6">Me suivre</h4>
+                <div class="flex space-x-4 mb-6">
+                    <a href="https://x.com/ousseine_site" class="p-3 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors group">
+                        <twig:ux:icon name="line-md:twitter-x" class="size-5 group-hover:text-blue-400 transition-colors" />
+                    </a>
+                    <a href="https://github.com/ousseine" class="p-3 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors group">
+                        <twig:ux:icon name="line-md:github" class="size-5 group-hover:text-blue-400 transition-colors" />
+                    </a>
+                    <a href="https://fr.linkedin.com/in/ousseine" class="p-3 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors group">
+                        <twig:ux:icon name="line-md:linkedin" class="size-5 group-hover:text-blue-400 transition-colors" />
+                    </a>
+                </div>
+                <p class="text-sm font-semibold text-slate-400">07 73 37 27 13</p>
+                <p class="text-sm text-slate-400">Disponible pour tout type de projets</p>
+            </div>
+        </div>
+        <div class="py-6 border-t border-slate-800 text-center">
+            <p class="text-slate-400 text-sm">© {{ 'now'|date('Y') }} Mohamed OUSSEINE - Développeur Web Freelance</p>
+        </div>
+    </div>
+</footer>

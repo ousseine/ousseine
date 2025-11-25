@@ -10,7 +10,7 @@ deploy: compile
 install: vendor/autoload.php
 	#$(sc) doctrine:migrations:migrate -n
 	$(sc) importmap:install
-	php composer dump-env prod
+	composer dump-env prod
 	APP_ENV=prod APP_DEBUG=0 $(sc) cache:clear
 	APP_ENV=prod APP_DEBUG=0 $(sc) cache:warmup
 

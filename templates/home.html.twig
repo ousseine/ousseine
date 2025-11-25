@@ -1,337 +1,343 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <!-- Hero Section -->
-    <twig:section name="hero" class="relative py-24 md:py-32 overflow-hidden" content_class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <twig:block name="top">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50/50 to-emerald-50/30"></div>
-            <div class="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
-        </twig:block>
-        <twig:block name="content">
-            <div class="z-10">
-                <twig:badge title="Développeur web freelance" icon="mdi:sparkles" class="mb-6 px-4 py-2" />
-                <h1 class="text-slate-900 mb-8 whitespace-nowrap">
-                    Mohamed OUSSEINE
-                    <br />
-                    <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 bg-clip-text text-transparent">Freelance</span>
-                </h1>
-                <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
-                    Je crée des applications web modernes et professionnels. <br>
-                    En tant que développeur freelance, je transforme vos idées en projets concrets et efficaces.
-                </p>
-                <twig:button type="link" link="#contact" label="Me contacter" icon="mdi:email-outline" class="md:text-lg flex-row-reverse" />
-                <div class="mt-12 flex items-center space-x-8 hidden">
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-slate-900">250+</div>
-                        <div class="text-sm text-slate-600">Projets livrés</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-slate-900">72h</div>
-                        <div class="text-sm text-slate-600">Livraison moyenne</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold text-slate-900">99%</div>
-                        <div class="text-sm text-slate-600">Clients satisfaits</div>
-                    </div>
-                </div>
-            </div>
-            <div class="relative lg:ml-8">
-                <div class="relative z-10 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <div class="bg-white/20 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
-                        <img src="{{ asset('icons/hero.svg') }}" class="w-full h-auto rounded-2xl shadow-2xl" alt="Mockup de site web moderne">
-                    </div>
-                </div>
-                <div class="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full opacity-20 animate-pulse"></div>
-                <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-20 animate-bounce"></div>
-            </div>
-        </twig:block>
-    </twig:section>
+    <twig:navbar />
 
-    <!-- Services Section -->
-    <twig:section name="services" class="py-24 bg-white" header="true" badge_title="services" title="Mes services" description="De la création à l’optimisation de votre projet, je mets en place les stratégies nécessaires pour accroître votre visibilité et attirer plus de clients." content_class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <twig:block  name="content">
-            <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
-                <twig:block name="content">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
-                        <twig:ux:icon name="mdi:design" class="size-10 text-white" />
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Design</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Design unique et moderne pensé pour refléter votre identité.
-                        Chaque interface est pensée pour être esthétique, intuitive et en parfaite harmonie avec votre identité.
+    <div>
+        <!-- Hero Section -->
+        <twig:section name="hero" class="relative py-24 md:py-32 overflow-hidden" content_class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <twig:block name="top">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50/50 to-emerald-50/30"></div>
+                <div class="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
+            </twig:block>
+            <twig:block name="content">
+                <div class="z-10">
+                    <twig:badge title="Développeur web freelance" icon="mdi:sparkles" class="mb-6 px-4 py-2" />
+                    <h1 class="text-slate-900 mb-8 whitespace-nowrap">
+                        Mohamed OUSSEINE
+                        <br />
+                        <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 bg-clip-text text-transparent">Freelance</span>
+                    </h1>
+                    <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
+                        Je crée des applications web modernes et professionnels. <br>
+                        En tant que développeur freelance, je transforme vos idées en projets concrets et efficaces.
                     </p>
-                </twig:block>
-            </twig:card>
-            <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
-                <twig:block name="content">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
-                        <twig:ux:icon name="mdi:hammer-wrench" class="size-10 text-white" />
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Développement</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Je crée des sites modernes, performants et adaptés à vos besoins.
-                        Chaque projet bénéficie d’une architecture solide, pour garantir fiabilité et performance.
-                    </p>
-                </twig:block>
-            </twig:card>
-            <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
-                <twig:block name="content">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
-                        <twig:ux:icon name="mdi:cellphone-cog" class="size-10 text-white"/>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Applications sur mesure</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Des interfaces modernes, responsive et conformes aux pratiques
-                        (W3C, RGAA). Le tout pour une expérience cohérente et agréable pour vos utilisateurs.
-                    </p>
-                </twig:block>
-            </twig:card>
-            <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
-                <twig:block name="content">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
-                        <twig:ux:icon name="mdi:speedometer" class="size-10 text-white"/>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Performance et sécurité</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Je crée des sites rapides et sécurisés. Avec des sauvegardes régulières et
-                        un suivi technique constant votre site reste fiable et performant at tout moment.
-                    </p>
-                </twig:block>
-            </twig:card>
-            <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
-                <twig:block name="content">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
-                        <twig:ux:icon name="mdi:magnify" class="size-10 text-white"/>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Référencement naturel</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Amélioration de votre présence sur Google et autres moteurs.
-                        SEO bien pensé, liens internes cohérents, schémas optimisés et site performant.
-                    </p>
-                </twig:block>
-            </twig:card>
-            <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
-                <twig:block name="content">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
-                        <twig:ux:icon name="mdi:headset" class="size-10 text-white"/>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Accompagnement</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Je vous conseille, vous guide et reste à vos côtés tout au long de votre projet.
-                        Clarté, écoute et confiance sont au cœur de ma façon de travailler.
-                    </p>
-                </twig:block>
-            </twig:card>
-        </twig:block>
-    </twig:section>
-
-    <!-- About Section -->
-    <twig:section name="about" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50/30" content_class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <twig:block name="content">
-            <div class="relative">
-                <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                    <img src="{{ asset('icons/profile.svg') }}" alt="Espace de travail développeur" class="w-full h-full object-cover">
-                </div>
-                <div class="absolute -bottom-6 -right-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 shadow-xl">
-                    <div class="text-white text-center">
-                        <div class="text-3xl font-bold">100%</div>
-                        <div class="text-sm">Engagement</div>
+                    <twig:button type="link" link="#contact" label="Me contacter" icon="mdi:email-outline" class="md:text-lg flex-row-reverse" />
+                    <div class="mt-12 flex items-center space-x-8 hidden">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-slate-900">250+</div>
+                            <div class="text-sm text-slate-600">Projets livrés</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-slate-900">72h</div>
+                            <div class="text-sm text-slate-600">Livraison moyenne</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-slate-900">99%</div>
+                            <div class="text-sm text-slate-600">Clients satisfaits</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <twig:badge title="À propos de moi" />
-                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 my-6">
-                    Qui suis-je ?
-                </h2>
-                <div class="space-y-4 text-slate-600 leading-relaxed">
-                    <p>Je suis Ousseine, développeur web freelance, et j’ai à cœur de donner vie aux idées de mes clients.
-                        Je crée des applications web sur mesure, j’intègre des solutions open source et je conçois
-                        des interfaces modernes et intuitives. Chaque projet est pour moi l’occasion de combiner
-                        rigueur technique et créativité, tout en construisant une vraie collaboration avec ceux
-                        avec qui je travaille.</p>
-
-                    <p>Curieux et passionné par mon métier, je me forme continuellement pour rester à la pointe
-                        des évolutions technologiques. Chaque projet est pour moi l'occasion d'apprendre,
-                        d'innover et de proposer des solutions performantes, parfaitement adaptées aux besoins
-                        spécifiques de mes clients.</p>
-
-                    <p>
-                        <strong>Ce qui me différencie :</strong>
-                    </p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <twig:ux:icon name="mdi:check-circle-outline" class="size-5 text-emerald-500 mr-3 mt-1 flex-shrink-0" />
-                            <span>Un investissement total dans chaque projet pour bâtir mon portfolio et ma réputation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <twig:ux:icon name="mdi:check-circle-outline" class="size-5 text-emerald-500 mr-3 mt-1 flex-shrink-0" />
-                            <span>Une communication transparente et régulière tout au long du projet</span>
-                        </li>
-                        <li class="flex items-start">
-                            <twig:ux:icon name="mdi:check-circle-outline" class="size-5 text-emerald-500 mr-3 mt-1 flex-shrink-0" />
-                            <span>L'utilisation de technologies modernes et professionnelles</span>
-                        </li>
-                    </ul>
+                <div class="relative lg:ml-8">
+                    <div class="relative z-10 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
+                            <img src="{{ asset('icons/hero.svg') }}" class="w-full h-auto rounded-2xl shadow-2xl" alt="Mockup de site web moderne">
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full opacity-20 animate-pulse"></div>
+                    <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-20 animate-bounce"></div>
                 </div>
-            </div>
-        </twig:block>
-    </twig:section>
+            </twig:block>
+        </twig:section>
 
-    <!-- Advantages Section -->
-    <twig:section name="advantages" class="py-24 bg-white" header="true" badge_title="Pourquoi nous choisir" title="Ce qui me distingue" description="Nous combinons créativité, technologie et stratégie pour créer des expériences web qui marquent et qui performent." content_class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <twig:block  name="content">
-            <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
-                <twig:block name="content">
-                    <div class="relative inline-flex items-center justify-center size-20 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 mb-8">
-                        <twig:ux:icon name="mynaui:zap" class="size-10 text-white" />
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Développement Express</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Sites web livrés en 72h avec un design sur mesure qui convertit
-                    </p>
-                </twig:block>
-            </twig:card>
-            <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
-                <twig:block name="content">
-                    <div class="relative inline-flex items-center justify-center size-20 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 mb-8">
-                        <twig:ux:icon name="mdi:award" class="size-10 text-white" />
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Tarifs Compétitifs</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Des tarifs avantageux sans compromis sur la qualité
-                    </p>
-                </twig:block>
-            </twig:card>
-            <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
-                <twig:block name="content">
-                    <div class="relative inline-flex items-center justify-center size-20 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 mb-8">
-                        <twig:ux:icon name="mdi:rocket-launch-outline" class="size-10 text-white" />
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Support Dédié</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Un suivi personnalisé pour faire évoluer votre présence en ligne
-                    </p>
-                </twig:block>
-            </twig:card>
-        </twig:block>
-    </twig:section>
+        <!-- Services Section -->
+        <twig:section name="services" class="py-24 bg-white" header="true" badge_title="services" title="Mes services" description="De la création à l’optimisation de votre projet, je mets en place les stratégies nécessaires pour accroître votre visibilité et attirer plus de clients." content_class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <twig:block  name="content">
+                <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon name="mdi:design" class="size-10 text-white" />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Design</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Design unique et moderne pensé pour refléter votre identité.
+                            Chaque interface est pensée pour être esthétique, intuitive et en parfaite harmonie avec votre identité.
+                        </p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon name="mdi:hammer-wrench" class="size-10 text-white" />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Développement</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Je crée des sites modernes, performants et adaptés à vos besoins.
+                            Chaque projet bénéficie d’une architecture solide, pour garantir fiabilité et performance.
+                        </p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon name="mdi:cellphone-cog" class="size-10 text-white"/>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Applications sur mesure</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Des interfaces modernes, responsive et conformes aux pratiques
+                            (W3C, RGAA). Le tout pour une expérience cohérente et agréable pour vos utilisateurs.
+                        </p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon name="mdi:speedometer" class="size-10 text-white"/>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Performance et sécurité</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Je crée des sites rapides et sécurisés. Avec des sauvegardes régulières et
+                            un suivi technique constant votre site reste fiable et performant at tout moment.
+                        </p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon name="mdi:magnify" class="size-10 text-white"/>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Référencement naturel</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Amélioration de votre présence sur Google et autres moteurs.
+                            SEO bien pensé, liens internes cohérents, schémas optimisés et site performant.
+                        </p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon name="mdi:headset" class="size-10 text-white"/>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Accompagnement</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Je vous conseille, vous guide et reste à vos côtés tout au long de votre projet.
+                            Clarté, écoute et confiance sont au cœur de ma façon de travailler.
+                        </p>
+                    </twig:block>
+                </twig:card>
+            </twig:block>
+        </twig:section>
 
-    <!-- Skills Section -->
-    <twig:section name="skills" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50/30" header="true" badge_title="compétences" title="Mes compétences" description="Je travaille avec les outils web modernes pour créer des sites performants et adaptés à vos besoins." content_class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <twig:block  name="content">
-            <twig:card class="group md:p-8 p-4 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:-translate-y-2">
-                <twig:block name="content">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-slate-600 to-slate-800 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <twig:ux:icon
-                                name="mdi:code"
-                                class="size-10 text-white"
-                        />
+        <!-- About Section -->
+        <twig:section name="about" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50/30" content_class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <twig:block name="content">
+                <div class="relative">
+                    <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="{{ asset('icons/profile.svg') }}" alt="Espace de travail développeur" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Technologies</h3>
-                    <p class="text-slate-600 leading-relaxed">PHP / JS / Tailwindcss / AlpineJS / Symfony / Docker</p>
-                </twig:block>
-            </twig:card>
-            <twig:card class="group md:p-8 p-4 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:-translate-y-2">
-                <twig:block name="content">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <twig:ux:icon
-                                name="mdi:database-outline"
-                                class="size-10 text-white"
-                        />
+                    <div class="absolute -bottom-6 -right-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 shadow-xl">
+                        <div class="text-white text-center">
+                            <div class="text-3xl font-bold">100%</div>
+                            <div class="text-sm">Engagement</div>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Base de données</h3>
-                    <p class="text-slate-600 leading-relaxed">MySQL / MariaDB / PosgreSQL / Doctrine</p>
-                </twig:block>
-            </twig:card>
-            <twig:card class="group md:p-8 p-4 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:-translate-y-2 hidden">
-                <twig:block name="content">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <twig:ux:icon
-                                name="simple-icons:framework"
-                                class="size-10 text-white"
-                        />
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Framework / CMS</h3>
-                    <p class="text-slate-600 leading-relaxed">Symfony / React / TailwindCSS</p>
-                </twig:block>
-            </twig:card>
-            <twig:card class="group md:p-8 p-4 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:-translate-y-2">
-                <twig:block name="content">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <twig:ux:icon
-                                name="mdi:web"
-                                class="size-10 text-white"
-                        />
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Web</h3>
-                    <p class="text-slate-600 leading-relaxed">W3C / SEO / Server LAMP / Optimisation / Figma</p>
-                </twig:block>
-            </twig:card>
-            <twig:card class="group md:p-8 p-4 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:-translate-y-2">
-                <twig:block name="content">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <twig:ux:icon name="eos-icons:project" class="size-10 text-white" />
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Gestion de projet</h3>
-                    <p class="text-slate-600 leading-relaxed">Agile / Kanban / Git / MCD / UML / Trello</p>
-                </twig:block>
-            </twig:card>
-        </twig:block>
-    </twig:section>
+                </div>
+                <div>
+                    <twig:badge title="À propos de moi" />
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 my-6">
+                        Qui suis-je ?
+                    </h2>
+                    <div class="space-y-4 text-slate-600 leading-relaxed">
+                        <p>Je suis Ousseine, développeur web freelance, et j’ai à cœur de donner vie aux idées de mes clients.
+                            Je crée des applications web sur mesure, j’intègre des solutions open source et je conçois
+                            des interfaces modernes et intuitives. Chaque projet est pour moi l’occasion de combiner
+                            rigueur technique et créativité, tout en construisant une vraie collaboration avec ceux
+                            avec qui je travaille.</p>
 
-    <!-- Process Section -->
-    <twig:section name="process" class="py-24 bg-white" header="true" badge_title="Ma méthode de travail" title="Comment je travaille" description="Un processus simple et transparent pour votre tranquillité d'esprit" content_class="max-w-3xl mx-auto">
-        <twig:block name="content">
-            <div class="flex items-start mb-8 last:mb-0">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-6">1</div>
-                <div class="flex-grow pt-2">
-                    <p class="text-lg text-slate-700">Échange sur votre projet et vos besoins</p>
-                </div>
-            </div>
-            <div class="flex items-start mb-8 last:mb-0">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-6">2</div>
-                <div class="flex-grow pt-2">
-                    <p class="text-lg text-slate-700">Proposition technique et devis détaillé</p>
-                </div>
-            </div>
-            <div class="flex items-start mb-8 last:mb-0">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-6">3</div>
-                <div class="flex-grow pt-2">
-                    <p class="text-lg text-slate-700">Développement avec points réguliers</p>
-                </div>
-            </div>
-            <div class="flex items-start mb-8 last:mb-0">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-6">4</div>
-                <div class="flex-grow pt-2">
-                    <p class="text-lg text-slate-700">Tests et validation ensemble</p>
-                </div>
-            </div>
-            <div class="flex items-start mb-8 last:mb-0">
-                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-6">5</div>
-                <div class="flex-grow pt-2">
-                    <p class="text-lg text-slate-700">Livraison et formation si besoin</p>
-                </div>
-            </div>
-        </twig:block>
-    </twig:section>
+                        <p>Curieux et passionné par mon métier, je me forme continuellement pour rester à la pointe
+                            des évolutions technologiques. Chaque projet est pour moi l'occasion d'apprendre,
+                            d'innover et de proposer des solutions performantes, parfaitement adaptées aux besoins
+                            spécifiques de mes clients.</p>
 
-    <!-- Contact Section -->
-    <twig:section name="contact" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50/30" header="true" badge_title="contact" title="Discutons de votre projet" description="Un projet en tête, besoin de conseil, une réponse en terme de production ou de délai ? N'hésitez pas à prendre contacter." content_class="mx-auto max-w-4xl text-card-foreground flex flex-col gap-6 rounded-xl p-8 md:p-12 border-0 shadow-lg bg-white">
-        <twig:block name="content">
-            {{ component('ContactMessage') }}
-        </twig:block>
-    </twig:section>
+                        <p>
+                            <strong>Ce qui me différencie :</strong>
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <twig:ux:icon name="mdi:check-circle-outline" class="size-5 text-emerald-500 mr-3 mt-1 flex-shrink-0" />
+                                <span>Un investissement total dans chaque projet pour bâtir mon portfolio et ma réputation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <twig:ux:icon name="mdi:check-circle-outline" class="size-5 text-emerald-500 mr-3 mt-1 flex-shrink-0" />
+                                <span>Une communication transparente et régulière tout au long du projet</span>
+                            </li>
+                            <li class="flex items-start">
+                                <twig:ux:icon name="mdi:check-circle-outline" class="size-5 text-emerald-500 mr-3 mt-1 flex-shrink-0" />
+                                <span>L'utilisation de technologies modernes et professionnelles</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </twig:block>
+        </twig:section>
 
-    <!-- Final CTA Section -->
-    <twig:section name="cta" class="py-24 bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 relative overflow-hidden" header="true" title="Prêt à donner vie à votre projet ?" description="Que vous soyez entrepreneur, artisan ou porteur de projet, je serais ravi de vous accompagner dans votre transformation digitale." text_class="text-white">
-        <twig:block name="top">
-            <div class="absolute inset-0 bg-black/10"></div>
-            <div class="absolute top-0 left-0 w-full h-full">
-                <div class="absolute top-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-                <div class="absolute bottom-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-            </div>
-        </twig:block>
-    </twig:section>
+        <!-- Advantages Section -->
+        <twig:section name="advantages" class="py-24 bg-white" header="true" badge_title="Pourquoi nous choisir" title="Ce qui me distingue" description="Nous combinons créativité, technologie et stratégie pour créer des expériences web qui marquent et qui performent." content_class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <twig:block  name="content">
+                <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="relative inline-flex items-center justify-center size-20 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 mb-8">
+                            <twig:ux:icon name="mynaui:zap" class="size-10 text-white" />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Développement Express</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Sites web livrés en 72h avec un design sur mesure qui convertit
+                        </p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="relative inline-flex items-center justify-center size-20 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 mb-8">
+                            <twig:ux:icon name="mdi:award" class="size-10 text-white" />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Tarifs Compétitifs</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Des tarifs avantageux sans compromis sur la qualité
+                        </p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group md:p-8 p-4 hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:from-blue-50 hover:to-purple-50">
+                    <twig:block name="content">
+                        <div class="relative inline-flex items-center justify-center size-20 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 mb-8">
+                            <twig:ux:icon name="mdi:rocket-launch-outline" class="size-10 text-white" />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Support Dédié</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Un suivi personnalisé pour faire évoluer votre présence en ligne
+                        </p>
+                    </twig:block>
+                </twig:card>
+            </twig:block>
+        </twig:section>
+
+        <!-- Skills Section -->
+        <twig:section name="skills" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50/30" header="true" badge_title="compétences" title="Mes compétences" description="Je travaille avec les outils web modernes pour créer des sites performants et adaptés à vos besoins." content_class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <twig:block  name="content">
+                <twig:card class="group md:p-8 p-4 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:-translate-y-2">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-slate-600 to-slate-800 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon
+                                    name="mdi:code"
+                                    class="size-10 text-white"
+                            />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Technologies</h3>
+                        <p class="text-slate-600 leading-relaxed">PHP / JS / Tailwindcss / AlpineJS / Symfony / Docker</p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group md:p-8 p-4 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:-translate-y-2">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon
+                                    name="mdi:database-outline"
+                                    class="size-10 text-white"
+                            />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Base de données</h3>
+                        <p class="text-slate-600 leading-relaxed">MySQL / MariaDB / PosgreSQL / Doctrine</p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group md:p-8 p-4 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:-translate-y-2 hidden">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon
+                                    name="simple-icons:framework"
+                                    class="size-10 text-white"
+                            />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Framework / CMS</h3>
+                        <p class="text-slate-600 leading-relaxed">Symfony / React / TailwindCSS</p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group md:p-8 p-4 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:-translate-y-2">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon
+                                    name="mdi:web"
+                                    class="size-10 text-white"
+                            />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Web</h3>
+                        <p class="text-slate-600 leading-relaxed">W3C / SEO / Server LAMP / Optimisation / Figma</p>
+                    </twig:block>
+                </twig:card>
+                <twig:card class="group md:p-8 p-4 text-center hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-slate-50/50 hover:-translate-y-2">
+                    <twig:block name="content">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <twig:ux:icon name="eos-icons:project" class="size-10 text-white" />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Gestion de projet</h3>
+                        <p class="text-slate-600 leading-relaxed">Agile / Kanban / Git / MCD / UML / Trello</p>
+                    </twig:block>
+                </twig:card>
+            </twig:block>
+        </twig:section>
+
+        <!-- Process Section -->
+        <twig:section name="process" class="py-24 bg-white" header="true" badge_title="Ma méthode de travail" title="Comment je travaille" description="Un processus simple et transparent pour votre tranquillité d'esprit" content_class="max-w-3xl mx-auto">
+            <twig:block name="content">
+                <div class="flex items-start mb-8 last:mb-0">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-6">1</div>
+                    <div class="flex-grow pt-2">
+                        <p class="text-lg text-slate-700">Échange sur votre projet et vos besoins</p>
+                    </div>
+                </div>
+                <div class="flex items-start mb-8 last:mb-0">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-6">2</div>
+                    <div class="flex-grow pt-2">
+                        <p class="text-lg text-slate-700">Proposition technique et devis détaillé</p>
+                    </div>
+                </div>
+                <div class="flex items-start mb-8 last:mb-0">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-6">3</div>
+                    <div class="flex-grow pt-2">
+                        <p class="text-lg text-slate-700">Développement avec points réguliers</p>
+                    </div>
+                </div>
+                <div class="flex items-start mb-8 last:mb-0">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-6">4</div>
+                    <div class="flex-grow pt-2">
+                        <p class="text-lg text-slate-700">Tests et validation ensemble</p>
+                    </div>
+                </div>
+                <div class="flex items-start mb-8 last:mb-0">
+                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-6">5</div>
+                    <div class="flex-grow pt-2">
+                        <p class="text-lg text-slate-700">Livraison et formation si besoin</p>
+                    </div>
+                </div>
+            </twig:block>
+        </twig:section>
+
+        <!-- Contact Section -->
+        <twig:section name="contact" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50/30" header="true" badge_title="contact" title="Discutons de votre projet" description="Un projet en tête, besoin de conseil, une réponse en terme de production ou de délai ? N'hésitez pas à prendre contacter." content_class="mx-auto max-w-4xl text-card-foreground flex flex-col gap-6 rounded-xl p-8 md:p-12 border-0 shadow-lg bg-white">
+            <twig:block name="content">
+                {{ component('ContactMessage') }}
+            </twig:block>
+        </twig:section>
+
+        <!-- Final CTA Section -->
+        <twig:section name="cta" class="py-24 bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 relative overflow-hidden" header="true" title="Prêt à donner vie à votre projet ?" description="Que vous soyez entrepreneur, artisan ou porteur de projet, je serais ravi de vous accompagner dans votre transformation digitale." text_class="text-white">
+            <twig:block name="top">
+                <div class="absolute inset-0 bg-black/10"></div>
+                <div class="absolute top-0 left-0 w-full h-full">
+                    <div class="absolute top-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+                </div>
+            </twig:block>
+        </twig:section>
+    </div>
+
+    <twig:footer />
 {% endblock %}
