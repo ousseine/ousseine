@@ -6,14 +6,13 @@ use App\Entity\Category;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Symfony\Bridge\Doctrine\Attribute\MapEntity;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
 #[Route('/category', name: 'category.')]
-final class CategoryController extends AbstractController
+final class CategoryController extends AdminController
 {
     public function __construct(
         private readonly CategoryRepository $categories,

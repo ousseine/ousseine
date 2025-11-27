@@ -6,14 +6,13 @@ use App\Entity\Post;
 use App\Form\PostType;
 use App\Repository\PostRepository;
 use Symfony\Bridge\Doctrine\Attribute\MapEntity;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
 #[Route('/post', name: 'post.')]
-final class PostController extends AbstractController
+final class PostController extends AdminController
 {
     public function __construct(
         private readonly PostRepository $posts,

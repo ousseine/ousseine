@@ -24,3 +24,7 @@ services:
     App\Twig\Components\ContactMessage:
         arguments:
             $adminEmail: '%admin_email%'
+
+    App\EventSubscriber\AdminRequestListener:
+        arguments:
+            $adminPrefix: '%admin_prefix%'
