@@ -1,0 +1,7 @@
+<form method="post" class="flex" action="{{ path('admin.post.delete', {'id': post.id}) }}" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer ce post ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ post.id) }}">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit" class="text-sm font-medium text-red-500 cursor-pointer">
+        <twig:ux:icon name="mage:trash" class="size-5 text-red-500" />
+    </button>
+</form>

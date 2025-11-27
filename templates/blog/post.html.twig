@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title 'Blog' %}
+{% block title title %}
 {% block admin_class 'flex flex-col' %}
 
 {% block body %}
@@ -23,18 +23,9 @@
         </twig:block>
 
         <div class="py-16 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-            <div class="w-full space-y-3">
-                <h1>{{ title }}</h1>
-                <p>{{ description }}</p>
-            </div>
+            <h1>{{ title }}</h1>
 
-            {% if posts|lenght > 0 %}
-                {% for post in posts %}
-                    <twig:blog post="{{ post }}" />
-                {% endfor %}
-            {% else %}
-                <p>Ooops ! Aucun article enregistré</p>
-            {% endif %}
+            {{ post }}
         </div>
     </div>
 

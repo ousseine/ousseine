@@ -5,15 +5,22 @@ home:
     defaults:
         template: 'home.html.twig'
 
-blog:
-    path: /blog
-    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
-    methods: GET
-    defaults:
-        template: 'blog/index.html.twig'
-
-controllers:
+main_controllers:
     resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+        path: ../src/Controller/Main
+        namespace: App\Controller\Main
     type: attribute
+
+admin_controllers:
+    name_prefix: 'admin.'
+    prefix: '/admin'
+    resource:
+        path: ../src/Controller/Admin
+        namespace: App\Controller\Admin
+    type: attribute
+
+#controllers:
+#    resource:
+#        path: ../src/Controller/
+#        namespace: App\Controller
+#    type: attribute

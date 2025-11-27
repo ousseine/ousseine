@@ -1,0 +1,8 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block admin %}
+    {{ form_start(form) }}
+        {{ form_widget(form, {attr: {class: 'space-y-5'}}) }}
+        <twig:button type="submit" label="Enregistrer" />
+    {{ form_end(form) }}
+{% endblock %}

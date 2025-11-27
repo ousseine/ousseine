@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+{% block title 'Interface Admin' %}
+
+{% block body %}
+    <div x-data="{ sidebarIsOpen: false }" class="relative flex w-full flex-col md:flex-row">
+        <a class="sr-only" href="#main-content">skip to the main content</a>
+
+        <div x-cloak x-show="sidebarIsOpen" class="fixed inset-0 z-20 bg-slate-50/10 backdrop-blur-xs md:hidden" aria-hidden="true" x-on:click="sidebarIsOpen = false" x-transition.opacity ></div>
+
+        <nav x-cloak class="fixed left-0 z-30 flex h-svh w-60 shrink-0 flex-col border-r border-gray-200 bg-white p-4 transition-transform duration-300 md:w-64 md:translate-x-0 md:relative" x-bind:class="sidebarIsOpen ? 'translate-x-0' : '-translate-x-60'" aria-label="sidebar navigation">
+            <a href="#" class="ml-2 w-fit text-2xl font-bold text-slate-950">
+                <span class="sr-only">homepage</span>
+                <span class="flex items-center gap-1.5">
+                    <img src="{{ asset('images/logo.png') }}" class="size-6 object-cover" alt="logo">
+                    <span class="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Admin</span>
+                </span>
+            </a>
+
+            <!-- sidebar links  -->
+            <div class="mt-8 flex flex-col gap-2 overflow-y-auto pb-6">
+                <a href="{{ path('home') }}" class="flex items-center rounded-xs gap-2 px-2 py-1.5 text-sm font-medium text-slate-800 underline-offset-2 focus-visible:underline focus:outline-hidden {{ app.request.get('_route') == 'home' ? 'bg-blue-50 cursor-not-allowed' : 'hover:bg-blue-50 hover:text-blue-900' }}">
+                    <twig:ux:icon name="mage:l-arrow-up-left" class="size-5 shrink-0" />
+                    <span>Voir le site</span>
+                </a>
+
+                <a href="#" class="hidden flex items-center rounded-xs gap-2 px-2 py-1.5 text-sm font-medium text-slate-800 underline-offset-2 focus-visible:underline focus:outline-hidden {{ app.request.get('_route') == 'admin.category.index' ? 'bg-blue-50 cursor-not-allowed' : 'hover:bg-blue-50 hover:text-blue-900' }}">
+                    <twig:ux:icon name="mage:dashboard" class="size-5 shrink-0" />
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="{{ path('admin.post.index') }}" class="flex items-center rounded-xs gap-2 px-2 py-1.5 text-sm font-medium text-slate-950 underline-offset-2 focus-visible:underline focus:outline-hidden {{ app.request.get('_route') == 'admin.post.index' ? 'bg-blue-50 cursor-not-allowed' : 'hover:bg-blue-50 hover:text-blue-900' }}">
+                    <twig:ux:icon name="mage:arrowlist" class="size-5 shrink-0" />
+                    <span>Posts</span>
+                    <span class="sr-only">active</span>
+                </a>
+
+                <a href="{{ path('admin.category.index') }}" class="flex items-center rounded-xs gap-2 px-2 py-1.5 text-sm font-medium text-slate-800 underline-offset-2 focus-visible:underline focus:outline-hidden {{ app.request.get('_route') == 'admin.category.index' ? 'bg-blue-50 cursor-not-allowed' : 'hover:bg-blue-50 hover:text-blue-900' }}">
+                    <twig:ux:icon name="mage:tag" class="size-5 shrink-0" />
+                    <span>Categories</span>
+                </a>
+
+                <a href="#" class="hidden flex items-center rounded-xs gap-2 px-2 py-1.5 text-sm font-medium text-slate-800 underline-offset-2 focus-visible:underline focus:outline-hidden {{ app.request.get('_route') == 'admin.category.index' ? 'bg-blue-50 cursor-not-allowed' : 'hover:bg-blue-50 hover:text-blue-900' }}">
+                    <twig:ux:icon name="mage:settings" class="size-5 shrink-0" />
+                    <span>Settings</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- top navbar & main content  -->
+        <div class="h-svh w-full overflow-y-auto bg-slate-50">
+            <nav class="sticky w-full h-12 top-0 z-10 flex items-center justify-between border-b border-gray-200 bg-white px-4 py-2" aria-label="top navigation bar">
+                <button type="button" class="md:hidden inline-block text-slate-950" x-on:click="sidebarIsOpen = true">
+                    <twig:ux:icon name="mage:dash-menu" class="size-5 shrink-0" />
+                    <span class="sr-only">sidebar toggle</span>
+                </button>
+
+                <!-- breadcrumbs  -->
+                <div class="hidden md:block text-slate-800 font-light">
+                    {{ wo_render_breadcrumbs({separator: '/', listId: 'breadcrumbs'}) }}
+                </div>
+
+                <!-- Profile Menu  -->
+                <div x-data="{ userDropdownIsOpen: false }" class="relative" x-on:keydown.esc.window="userDropdownIsOpen = false">
+                    <button type="button" class="flex w-full items-center rounded-xs gap-2 text-left text-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400 cursor-pointer" x-bind:class="userDropdownIsOpen ? 'bg-primary/10' : ''" aria-haspopup="true" x-on:click="userDropdownIsOpen = ! userDropdownIsOpen" x-bind:aria-expanded="userDropdownIsOpen">
+                        <span class="size-8 object-cover rounded-xs border border-slate-500 flex items-center justify-center">
+                            <twig:ux:icon name="mage:user" class="size-5 shrink-0" />
+                        </span>
+                        <div class="hidden md:flex flex-col">
+                            <span class="text-sm font-bold text-slate-950 sr-only">Ousseine</span>
+                            <span class="text-xs sr-only" aria-hidden="true">@ousseine</span>
+                            <span class="sr-only">profile settings</span>
+                        </div>
+                    </button>
+
+                    <!-- menu -->
+                    <div x-cloak x-show="userDropdownIsOpen" class="absolute top-12 right-0 z-50 h-fit w-48 border divide-y divide-outline border-gray-200 bg-slate-50 rounded-xs" role="menu" x-on:click.outside="userDropdownIsOpen = false" x-on:keydown.down.prevent="$focus.wrap().next()" x-on:keydown.up.prevent="$focus.wrap().previous()" x-transition="" x-trap="userDropdownIsOpen">
+                        <div class="flex flex-col p-1.5">
+                            <a href="#" class="flex items-center gap-2 px-2 py-1.5 text-sm font-medium text-slate-800 underline-offset-2 hover:bg-slate-200 hover:text-slate-800 transition-colors duration-300 focus-visible:underline focus:outline-hidden" role="menuitem">
+                                <twig:ux:icon name="mage:user" class="size-5 shrink-0" />
+                                <span>Profile</span>
+                            </a>
+                        </div>
+
+                        <div class="flex flex-col p-1.5">
+                            <a href="#" class="flex items-center gap-2 px-2 py-1.5 text-sm font-medium text-slate-800 underline-offset-2 hover:bg-slate-200 hover:text-slate-800 transition-colors duration-300 focus-visible:underline focus:outline-hidden" role="menuitem">
+                                <twig:ux:icon name="mage:settings" class="size-5 shrink-0" />
+                                <span>Paramètres</span>
+                            </a>
+                        </div>
+
+                        <div class="flex flex-col p-1.5">
+                            <a href="{{ path('logout') }}" class="flex items-center gap-2 px-2 py-1.5 text-sm font-medium text-slate-800 underline-offset-2 hover:bg-slate-200 hover:text-slate-800 transition-colors duration-300 focus-visible:underline focus:outline-hidden" role="menuitem">
+                                <twig:ux:icon name="mage:logout" class="size-5 shrink-0" />
+                                <span>Se déconnecter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- main content  -->
+            <div id="main-content" class="sticky p-4 md:p-6 lg:p-8">
+                <div class="overflow-y-auto mx-auto max-w-4xl w-full">
+
+                    <div class="flex items-start justify-between gap-x-10 mb-6">
+                        <h5 class="text-lg md:text-xl font-medium leading-tight">
+                            {{ title ?? 'Interface Admin' }}
+                        </h5>
+                        <div class="flex items-center gap-2">
+                            {% block actions %}{% endblock %}
+                        </div>
+                    </div>
+
+                    {% block admin %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

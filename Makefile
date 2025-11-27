@@ -8,7 +8,7 @@ deploy: compile
 	ssh $(server) 'cd $(domain) && git pull origin master && make install'
 
 install: vendor/autoload.php
-	#$(sc) doctrine:migrations:migrate -n
+	$(sc) doctrine:migrations:migrate -n
 	$(sc) importmap:install
 	composer dump-env prod
 	APP_ENV=prod APP_DEBUG=0 $(sc) cache:clear
@@ -28,3 +28,13 @@ compile:
 	rm -rf public/assets
 	git add public/assets
 	git commit -m "Clean local assets [$(shell date +%Y-%m-%d)]"
+
+start:
+	docker compose up -d
+	symfony serve -d
+	symfony console tailwind:build -w
+
+stop:
+	docker compose down
+	symfony server:stop
+

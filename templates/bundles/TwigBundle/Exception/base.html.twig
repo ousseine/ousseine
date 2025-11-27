@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'error' %}
+{% block title "Ousp ! error " ~ status_code ~ " | Ousseine" %}
+
+{% block body %}
+    <div>
+        <p>{% block code '' %}</p>
+        <p>{% block description '' %}</p>
+
+        <div>
+            <a href="{{ path('home') }}">Page d'accueil</a>
+        </div>
+    </div>
+{% endblock %}

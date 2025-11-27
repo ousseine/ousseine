@@ -16,9 +16,10 @@
 
 @theme inline {
     --font-sans: var(--font-family);
-    --radius-sm: calc(var(--radius) - 4px);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-lg: var(--radius);
+    --radius-xs: calc(var(--radius) - 4px);
+    --radius-sm: calc(var(--radius) - 2px);
+    --radius-radius: var(--radius);
+    --radius-lg: calc(var(--radius) + 2px);
     --radius-xl: calc(var(--radius) + 4px);
 }
 
@@ -69,6 +70,7 @@ html {
 input[type='text'],
 input[type='password'],
 input[type='email'],
+select,
 textarea {
     @apply file:text-slate-900 placeholder:text-slate-400 selection:bg-[#030213] selection:text-slate-50 border-transparent flex h-10 min-w-0 rounded-md border px-3 py-1 text-base bg-[#f3f3f5] transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-[#A1A1A1FF] focus-visible:ring-[#A1A1A1FF]/50 focus-visible:ring-[3px] aria-invalid:ring-[#d4183d]/20 dark:aria-invalid:ring-[#d4183d]/40 aria-invalid:border-[#d4183d] w-full;
 }
@@ -76,4 +78,16 @@ textarea { @apply h-auto min-h-[100px]; }
 
 form li {
     @apply text-sm text-red-500;
+}
+
+.table-actions {
+    @apply flex items-center justify-center gap-2;
+}
+
+.breadcrumb {
+    @apply flex items-center gap-2 text-sm;
+
+    & > li:last-child {
+        @apply font-semibold;
+    }
 }

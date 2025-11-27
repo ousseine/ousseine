@@ -1,0 +1,21 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block actions %}
+    <twig:button type="link" size="sm" label="Éditer" link="{{ path('admin.post.update', {slug: post.slug}) }}" />
+{% endblock %}
+
+{% block admin %}
+    <div class="space-y-6">
+        <div>{{ post.summary|raw }}</div>
+
+        <div class="space-y-2">
+            <p class="text-sm font-light">
+                {{ post.publishedAt|format_time_diff }} • <strong>Ousseine</strong>
+            </p>
+            <p class="text-sm font-light">Créer le <span class="text-xs">{{ post.createdAt ? post.createdAt|date('d/ m/ Y') : '' }}</span></p>
+            <twig:badge title="{{ post.category }}" icon="mage:tag" />
+        </div>
+
+        <article class="text-base leading-8">{{ post.content|raw }}</article>
+    </div>
+{% endblock %}

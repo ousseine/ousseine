@@ -12,11 +12,18 @@
     'default': 'text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700',
     'primary': 'bg-primary text-primary-foreground text-primary-foreground hover:bg-primary/90',
     'secondary': 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-    'destructive': 'bg-destructive text-destructive-foreground hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
+    'destructive': 'bg-red-500 text-red-50 hover:bg-red-500/90 focus-visible:ring-red-500/20 dark:focus-visible:ring-red-500/40 dark:bg-red-500/60',
     'outline': 'border border-slate-200 hover:border-blue-300 hover:bg-blue-50 border',
     'outline-1': 'border bg-background text-foreground hover:bg-accent hover:text-accent-foreground',
     'ghost': 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
     'link': 'text-primary underline-offset-4 hover:underline'
+} %}
+
+{% set sizes = {
+    'xs': 'text-xs px-3 py-1.5',
+    'sm': 'text-xs px-4 py-2',
+    'base': 'text-sm px-6 py-2.5',
+    'lg': 'text-lg w-full px-6 py-2.5',
 } %}
 
 {% set base_classes = "
@@ -27,13 +34,7 @@
     dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:shadow-md transition-all duration-300 cursor-pointer
 " %}
 
-{% set sizes = {
-    'sm': 'text-xs px-4 py-2',
-    'base': 'text-sm px-6 py-2.5',
-    'lg': 'text-lg w-full px-6 py-2.5',
-} %}
-
-{% set classes = [base_classes, sizes[size], variants[variant] ?? variants.default, sizes.base, class]|join(' ') %}
+{% set classes = [base_classes, sizes[size] ?? sizes.base, variants[variant] ?? variants.default, class]|join(' ') %}
 
 {% if type == 'link' %}
     <a href="{{ link }}" class="{{ classes|trim }}">

@@ -1,0 +1,6 @@
+<form method="post" class="flex" action="{{ path('admin.post.status', {'id': post.id}) }}" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer ce post ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('status' ~ post.id) }}">
+    <button type="submit" class="text-sm font-medium text-red-500 cursor-pointer">
+        <twig:switch status="{{ post.status }}" />
+    </button>
+</form>

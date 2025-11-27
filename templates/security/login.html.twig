@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block title 'Connexion' %}
+
+{% block body %}
+    <div class="max-w-md mx-auto w-full p-4 md:my-20 my-16 bg-gradient-to-br from-slate-50 to-blue-50/30">
+        <form method="post">
+            {% if error %}
+                <div class="mb-5 bg-red-200 text-red-900 h-10 px-3 py-2 rounded text-sm font-light">
+                    {% if error.line == 265 or error.line == 67 %}
+                        <p>{{ 'error_login'|trans }}</p>
+                    {% else %}
+                        <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <h3 class="text-center">Se connecter</h3>
+
+            <div class="space-y-5 mt-8">
+                <div>
+                    <label for="username">Email</label>
+                    <input type="email" value="{{ last_username }}" name="_username" id="username" autocomplete="email" required autofocus>
+                </div>
+
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="_password" id="password" autocomplete="current-password" required>
+                </div>
+
+                <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
+
+                <div class="checkbox mb-3">
+                    <input type="checkbox" name="_remember_me" id="_remember_me">
+                    <label for="_remember_me">Remember me</label>
+                </div>
+
+                <twig:button type="submit" label="Connexion" size="lg" />
+            </div>
+        </form>
+    </div>
+{% endblock %}

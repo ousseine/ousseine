@@ -1,0 +1,37 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block actions %}
+    <twig:button type="link" size="sm" label="Créer" link="{{ path('admin.category.create') }}" />
+{% endblock %}
+
+{% block admin %}
+    {% if categories|length > 0 %}
+        <table class="table w-full">
+            <thead>
+            <tr class="border-b">
+                <td class="px-3 py-3 text-sm text-start">Nom</td>
+                <td class="px-3 py-3 text-sm text-start">Slug</td>
+                <td class="px-3 py-3 text-sm text-center"></td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for category in categories %}
+                <tr class="border-b">
+                    <td class="px-3 py-3 text-sm text-start">{{ category.name }}</td>
+                    <td class="px-3 py-3 text-sm text-start">{{ category.slug }}</td>
+                    <td class="px-3 py-3 text-sm text-center">
+                        <div class="table-actions">
+                            <a href="{{ path('admin.category.update', {slug: category.slug}) }}" class="text-sm font-medium text-blue-500">
+                                <twig:ux:icon name="mage:edit" class="size-5 text-blue-500" />
+                            </a>
+                            {{ include('admin/category/_delete_form.html.twig') }}
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="text-lg font-light leading-7">Aucune catégorie enregistrée</p>
+    {% endif %}
+{% endblock %}

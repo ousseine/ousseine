@@ -35,6 +35,9 @@
             "migrations/.gitignore"
         ]
     },
+    "mhujer/breadcrumbs-bundle": {
+        "version": "1.5.10"
+    },
     "phpunit/phpunit": {
         "version": "12.4",
         "recipe": {

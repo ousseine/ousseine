@@ -1,0 +1,9 @@
+{% props post = null %}
+<a href="{{ path('post', {slug: post.slug}) }}" class="block bg-card text-card-foreground border rounded-base p-4 t-colors hover:bg-accent hover:text-accent-foreground group">
+    <h3 class="group-hover:text-accent-foreground">{{ post.title }}</h3>
+    <p class="text-base mt-1.5 mb-0.5 group-hover:text-accent-foreground text-sm">{{ post.summary }}</p>
+    <div class="mt-1 font-light group-hover:text-accent-foreground">
+        <span class="font-medium text-sm">{{ post.owner.username }}</span> &#8226;
+        <span class="font-light text-sm">{{ post.publishedAt|format_time_diff }}</span>
+    </div>
+</a>
