@@ -32,8 +32,8 @@
         @apply bg-slate-50 text-slate-900;
     }
 
-    h1 {
-        @apply text-5xl md:text-6xl font-bold leading-tight;
+    h1, .h1 {
+        @apply text-5xl md:text-6xl font-bold;
     }
 
     h2 {
@@ -59,6 +59,39 @@
     button {
         @apply text-sm font-normal;
     }
+
+    .text-lg,
+    .text-xl,
+    .text-2xl,
+    .text-3xl,
+    .text-4xl,
+    .text-5xl {
+        line-height: 1.4
+    }
+
+    .text-lg::before,
+    .text-xl::before,
+    .text-2xl::before,
+    .text-3xl::before,
+    .text-4xl::before,
+    .text-5xl::before,
+    .text-6xl::before {
+        content: "";
+        margin-bottom: -0.3362em;
+        display: table;
+    }
+
+    .text-lg::after,
+    .text-xl::after,
+    .text-2xl::after,
+    .text-3xl::after,
+    .text-4xl::after,
+    .text-5xl::after,
+    .text-6xl::after {
+        content: "";
+        margin-top: -0.3362em;
+        display: table;
+    }
 }
 
 html {
@@ -70,11 +103,13 @@ html {
 input[type='text'],
 input[type='password'],
 input[type='email'],
+input[type='search'],
 select,
 textarea {
     @apply file:text-slate-900 placeholder:text-slate-400 selection:bg-[#030213] selection:text-slate-50 border-transparent flex h-10 min-w-0 rounded-md border px-3 py-1 text-base bg-[#f3f3f5] transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-[#A1A1A1FF] focus-visible:ring-[#A1A1A1FF]/50 focus-visible:ring-[3px] aria-invalid:ring-[#d4183d]/20 dark:aria-invalid:ring-[#d4183d]/40 aria-invalid:border-[#d4183d] w-full;
 }
 textarea { @apply h-auto min-h-[100px]; }
+input[type='search'] { @apply pl-9 max-w-sm h-9; }
 
 form li {
     @apply text-sm text-red-500;

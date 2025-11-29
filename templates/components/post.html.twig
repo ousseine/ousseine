@@ -1,9 +1,19 @@
 {% props post = null %}
-<a href="{{ path('post', {slug: post.slug}) }}" class="block bg-card text-card-foreground border rounded-base p-4 t-colors hover:bg-accent hover:text-accent-foreground group">
-    <h3 class="group-hover:text-accent-foreground">{{ post.title }}</h3>
-    <p class="text-base mt-1.5 mb-0.5 group-hover:text-accent-foreground text-sm">{{ post.summary }}</p>
-    <div class="mt-1 font-light group-hover:text-accent-foreground">
-        <span class="font-medium text-sm">{{ post.owner.username }}</span> &#8226;
-        <span class="font-light text-sm">{{ post.publishedAt|format_time_diff }}</span>
-    </div>
+<a href="{{ path('blog.post', {slug: post.slug}) }}" class="block bg-slate-50 text-slate-950 border rounded-base p-4 space-y-2.5 transition duration-300 rounded-xs hover:bg-slate-100 group">
+    <span class="font-light text-sm flex items-center gap-x-2">
+        <twig:ux:icon name="mage:chart-25" class="size-4" />
+        {{ post.publishedAt|format_time_diff }}
+    </span>
+    <h5 class="text-lg md:text-xl font-medium leading-tight group-hover:text-accent-foreground">{{ post.title }}</h5>
+    <p class="text-base group-hover:text-accent-foreground text-sm">{{ post.summary }}</p>
+    <twig:badge title="{{ post.category.name }}" />
 </a>
+
+{#<a href="{{ path('blog.post', {slug: post.slug}) }}" class="block bg-card text-card-foreground border rounded-base p-4 t-colors hover:bg-accent hover:text-accent-foreground group">#}
+{#    <h5 class="text-lg md:text-xl font-medium leading-tight group-hover:text-accent-foreground">{{ post.title }}</h5>#}
+{#    <p class="text-base mt-2 mb-0.5 group-hover:text-accent-foreground text-sm">{{ post.summary }}</p>#}
+{#    <div class="font-light group-hover:text-accent-foreground">#}
+{#        <span class="font-medium text-sm">{{ post.owner.email }}</span> &#8226;#}
+{#        <span class="font-light text-sm">{{ post.publishedAt|format_time_diff }}</span>#}
+{#    </div>#}
+{#</a>#}

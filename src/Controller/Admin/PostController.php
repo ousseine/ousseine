@@ -21,12 +21,13 @@ final class PostController extends AdminController
     }
 
     #[Route(name: 'index', methods: ['GET'])]
-    public function index(): Response
+    public function index(Request $request): Response
     {
+        $page = $request->query->getInt('page', 1);
         $this->breadcrumbs->addItem('Posts');
 
         return $this->render('admin/post/index.html.twig', [
-            'posts' => $this->posts->findBy([], ['createdAt' => 'DESC']),
+            'posts' => $this->posts->findByAdminPosts($page),
             'title' => 'Posts',
             'name' => 'Posts',
         ]);

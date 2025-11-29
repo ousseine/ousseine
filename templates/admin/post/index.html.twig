@@ -40,6 +40,8 @@
             {% endfor %}
             </tbody>
         </table>
+
+        {{ knp_pagination_render(posts, 'components/pagination.html.twig') }}
     {% else %}
         <p class="text-lg font-light leading-7">Aucun post enregistré</p>
     {% endif %}

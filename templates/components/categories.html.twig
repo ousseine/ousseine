@@ -1,0 +1,11 @@
+{% if this.categories|length > 0 %}
+    <div class="bg-slate-100 border sticky top-16 rounded-sm min-w-[200px] md:block hidden p-4">
+        <h5 class="text-lg text-slate-950 font-semibold leading-tight group-hover:text-accent-foreground">Catégories</h5>
+
+        <div class="mt-4 space-y-2">
+            {% for c in this.categories %}
+                <a href="{{ path('blog.category', {slug: c.slug}) }}" class="block text-slate-950 text-base font-normal hover:underline hover:underline-offset-2 transition-all duration-300">{{ c.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

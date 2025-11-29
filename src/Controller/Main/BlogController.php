@@ -7,6 +7,7 @@ use App\Entity\Post;
 use App\Repository\PostRepository;
 use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
@@ -18,22 +19,27 @@ final class BlogController extends AbstractController
     }
 
     #[Route('/blog', name: 'blog', methods: ['GET'])]
-    public function index(): Response
+    public function index(Request $request): Response
     {
+        $page = $request->query->getInt('page', 1);
+
         return $this->render('blog/index.html.twig', [
-            'posts' => $this->posts->findAllByPublishedAt(),
+            'posts' => $this->posts->findAllByPublishedAt($page),
             'title' => 'Blog',
-            'description' => 'Blog'
+            'description' => 'Un brin de code, une pincée de maths, une dose de tech, et une envie d\'explorer pour nourrir la curiosité.'
         ]);
     }
 
     #[Route('/blog/categorie/{slug}', name: 'blog.category', methods: ['GET'])]
     public function category(
+        Request $request,
         #[MapEntity(mapping: ['slug' => 'slug'])] Category $category
     ): Response
     {
+        $page = $request->query->getInt('page', 1);
+
         return $this->render('blog/index.html.twig', [
-            'posts' => $this->posts->findByCategory($category),
+            'posts' => $this->posts->findByCategory($category, $page),
             'title' => $category->getName(),
             'description' => ''
         ]);

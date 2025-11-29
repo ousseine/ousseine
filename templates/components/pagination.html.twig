@@ -1,0 +1,39 @@
+{% if pageCount > 1 %}
+    <div class="mt-6 flex">
+        <ul class="overflow-hidden flex justify-center gap-1.5 text-xs font-medium">
+            {% if previous is defined %}
+                <li>
+                    <a class="inline-flex h-8 w-8 items-center justify-center shadow-lg border border-border hover:text-primary-foreground hover:bg-primary hover:border-ring" rel="prev" href="{{ path(route, query|merge({(pageParameterName): previous})) }}">
+                        <span class="sr-only hidden">Prev Page</span>
+                        <span class="text-color">
+                            <twig:ux:icon name="fluent:ios-arrow-24-filled" class="size-4" />
+                        </span>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% for page in pagesInRange %}
+                {% if page != current %}
+                    <li>
+                        <a class="block h-8 w-8 shadow-lg border border-border text-color text-center leading-8 hover:text-primary-foreground hover:bg-primary hover:border-ring" href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <span class="block h-8 w-8 shadow-lg border border-ring bg-primary text-center leading-8 text-primary-foreground">{{ page }}</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {% if next is defined %}
+                <li>
+                    <a class="inline-flex h-8 w-8 items-center justify-center shadow-lg border border-border hover:text-primary-foreground hover:bg-primary hover:border-ring" rel="next" href="{{ path(route, query|merge({(pageParameterName): next})) }}">
+                        <span class="sr-only hidden">Next Page</span>
+                        <span class="text-color">
+                            <twig:ux:icon name="fluent:ios-arrow-rtl-24-filled" class="size-4" />
+                        </span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+{% endif %}
