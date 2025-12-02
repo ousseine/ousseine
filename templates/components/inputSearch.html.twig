@@ -1,0 +1,7 @@
+{% props action = '#', query = '', class = null %}
+<form action="{{ action }}" method="get" class="w-full">
+    <label class="w-full relative">
+        <twig:ux:icon name="mage:search" class="size-4 absolute left-3 top-1/2 transform -translate-y-1/2" />
+        <input type="search" name="q" value="{{ query }}" class="{{ class }}" placeholder="Rechercher un article" />
+    </label>
+</form>

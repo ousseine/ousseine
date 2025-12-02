@@ -6,16 +6,20 @@
 
 {% block admin %}
     <div class="space-y-6">
-        <div>{{ post.summary|raw }}</div>
+        <article>{{ post.summary|markdown_to_html }}</article>
 
         <div class="space-y-2">
             <p class="text-sm font-light">
                 {{ post.publishedAt|format_time_diff }} • <strong>Ousseine</strong>
             </p>
-            <p class="text-sm font-light">Créer le <span class="text-xs">{{ post.createdAt ? post.createdAt|date('d/ m/ Y') : '' }}</span></p>
+            <p class="text-sm font-light">
+                Créer le <span class="text-xs">{{ post.createdAt ? post.createdAt|date('d/ m/ Y') : '' }}</span>
+            </p>
             <twig:badge title="{{ post.category }}" icon="mage:tag" />
         </div>
 
-        <article class="text-base leading-8">{{ post.content|raw }}</article>
+        <article class="text-base leading-8 space-y-5">
+            {{ post.content|markdown_to_html }}
+        </article>
     </div>
 {% endblock %}

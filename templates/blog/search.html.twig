@@ -1,0 +1,23 @@
+{% extends 'blog/layout.html.twig' %}
+
+{% block content %}
+    <div class="w-full max-w-2xl mx-auto">
+        <div class="w-full mb-12">
+            <h3 class="whitespace-nowrap">
+                {{ posts|length ~ ' résultat' }}{{ posts|length > 1 ? 's' : ''}} «{{ query }}»
+            </h3>
+        </div>
+
+        {% if posts|length > 0 %}
+            <div class="space-y-6">
+                {% for post in posts %}
+                    <twig:post post="{{ post }}" />
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="text-xl font-medium text-center">
+                Aucun résultat ne semble correspondre à votre recherche
+            </p>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,56 +1,27 @@
-{% extends 'base.html.twig' %}
-{% block title 'Blog' %}
-{% block admin_class 'flex flex-col' %}
+{% extends 'blog/layout.html.twig' %}
 
-{% block body %}
-    <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-200 sticky top-0 z-50 py-2.5">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-            <a href="{{ path('home') }}" class="flex items-center space-x-2">
-                <div class="size-8">
-                    <img src="{{ asset('images/logo.png') }}" class="size-full object-cover" alt="logo">
-                </div>
-                <span class="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Ousseine</span>
-            </a>
-            <div class="flex items-center gap-x-2">
-                <label class="w-full relative">
-                    <twig:ux:icon name="mage:search" class="size-4 absolute left-3 top-1/2 transform -translate-y-1/2" />
-                    <input type="search" name="search" placeholder="Rechercher un article" />
-                </label>
-                <twig:button type="link" link="{{ path('blog') }}" size="sm" label="Blog" />
-                {% if app.user %}
-                    <twig:button type="link" variant="outline" link="{{ path('admin.post.index') }}" size="sm" label="Admin" />
-                {% endif %}
-            </div>
-        </div>
-    </nav>
-
-    <div class="relative flex-1 bg-slate-50 text-slate-900 md:py-20 py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="w-full space-y-4 mb-16">
-                <h1 class="">{{ title }}</h1>
-                {% if description %}
-                    <p class="text-lg max-w-lg">{{ description }}</p>
-                {% endif %}
-            </div>
-
-            <div class="block md:flex items-start gap-x-8">
-                <div class="w-full">
-                    {% if posts|length > 0 %}
-                        <div class="space-y-6">
-                            {% for post in posts %}
-                                <twig:post post="{{ post }}" />
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        <p class="text-lg font-medium">Ooops ! Aucun article enregistré</p>
-                    {% endif %}
-
-                    {{ knp_pagination_render(posts, 'components/pagination.html.twig') }}
-                </div>
-                <twig:categories />
-            </div>
-        </div>
+{% block content %}
+    <div class="w-full space-y-4 mb-16">
+        <h1 class="">{{ title }}</h1>
+        {% if description %}
+            <p class="text-lg max-w-lg">{{ description }}</p>
+        {% endif %}
     </div>
 
-    <twig:footer />
+    <div class="block md:flex items-start gap-x-8">
+        <div class="w-full">
+            {% if posts|length > 0 %}
+                <div class="space-y-6">
+                    {% for post in posts %}
+                        <twig:post post="{{ post }}" />
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="text-lg font-medium">Ooops ! Aucun article enregistré</p>
+            {% endif %}
+
+            {{ knp_pagination_render(posts, 'components/pagination.html.twig') }}
+        </div>
+        <twig:categories />
+    </div>
 {% endblock %}

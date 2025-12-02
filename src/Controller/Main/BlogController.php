@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+#[Route('/blog')]
 final class BlogController extends AbstractController
 {
     public function __construct(
@@ -18,7 +19,7 @@ final class BlogController extends AbstractController
     ){
     }
 
-    #[Route('/blog', name: 'blog', methods: ['GET'])]
+    #[Route(name: 'blog', methods: ['GET'])]
     public function index(Request $request): Response
     {
         $page = $request->query->getInt('page', 1);
@@ -30,7 +31,7 @@ final class BlogController extends AbstractController
         ]);
     }
 
-    #[Route('/blog/categorie/{slug}', name: 'blog.category', methods: ['GET'])]
+    #[Route('/categorie/{slug}', name: 'blog.category', methods: ['GET'])]
     public function category(
         Request $request,
         #[MapEntity(mapping: ['slug' => 'slug'])] Category $category
@@ -45,7 +46,7 @@ final class BlogController extends AbstractController
         ]);
     }
 
-    #[Route('/blog/{slug}', name: 'blog.post', methods: ['GET'])]
+    #[Route('/{slug}', name: 'blog.post', methods: ['GET'])]
     public function show(
         #[MapEntity(mapping: ['slug' => 'slug'])] Post $post
     ): Response
@@ -56,13 +57,16 @@ final class BlogController extends AbstractController
         ]);
     }
 
-    #[Route('/blog/recherche', name: 'blog.search', methods: ['GET'])]
-    public function search(string $q): Response
+    #[Route('/recherche', name: 'blog.search', methods: ['GET'], priority: 2)]
+    public function search(Request $request): Response
     {
-        return $this->render('blog/index.html.twig', [
-            'posts' => '',
-            'title' => 'Résultats de la recherche pour : ' . $q,
-            'description' => ''
+        $q = $request->query->get('q');
+        $posts = $this->posts->findBySearch($q);
+
+        return $this->render('blog/search.html.twig', [
+            'posts' => $posts,
+            'title' => 'Rechercher un article',
+            'query' => $q
         ]);
     }
 }
