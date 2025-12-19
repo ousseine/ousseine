@@ -1,10 +1,9 @@
 <nav x-data="{ mobileMenuIsOpen: false }" x-on:click.away="mobileMenuIsOpen = false" class="bg-white/80 backdrop-blur-lg border-b border-gray-200 sticky top-0 z-50 py-3" aria-label="menu">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <a href="{{ path('home') }}" class="flex items-center space-x-2">
-            <div class="size-8">
-                <img src="{{ asset('images/logo.png') }}" class="size-full object-cover" alt="logo">
+            <div class="h-6 w-auto">
+                <img src="{{ asset('images/logo_text.png') }}" class="size-full object-cover" alt="logo">
             </div>
-            <span class="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Ousseine</span>
         </a>
         <ul class="hidden items-center gap-4 md:flex">
             <li><a href="#hero" class="font-medium text-slate-700 focus:outline-hidden transition-colors duration-300 hover:text-blue-600">Accueil</a></li>
