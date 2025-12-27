@@ -48,6 +48,10 @@
         @apply text-2xl md:text-3xl font-semibold leading-tight;
     }
 
+    h5 {
+        @apply text-xl md:text-2xl font-semibold leading-tight;
+    }
+
     p {
         @apply text-base font-normal;
     }
@@ -128,3 +132,6 @@ form li {
 }
 
 article p { @apply text-lg }
+article pre { @apply rounded-md p-4 bg-gray-200 overflow-auto; }
+article ol { @apply list-decimal list-inside; }
+article ul { @apply list-disc list-inside; }
