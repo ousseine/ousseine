@@ -1,13 +1,13 @@
 .PHONY: install, deploy, compile
 
+sc		:= php bin/console
 server 	:= 'fdm'
 domain 	:= 'domains/ousseine.site/public_html/ousseine'
-sc		:= php bin/console
 vendor 	:= 'composer install --no-dev --optimize-autoloader && touch vendor/autoload.php'
-clear  	:= 'APP_ENV=prod APP_DEBUG=0 $(sc) cache:clear && PP_ENV=prod APP_DEBUG=0 $(sc) cache:warmup'
+install := 'composer dump-env prod && $(sc) importmap:install && APP_ENV=prod APP_DEBUG=0 $(sc) cache:clear'
 
 deploy: compile
-	ssh $(server) 'cd $(domain) && git pull origin master && $(sc) doctrine:migrations:migrate -n && $(vendor) && $(clear)'
+	ssh $(server) 'cd $(domain) && git pull origin master && $(sc) doctrine:migrations:migrate -q && $(vendor) && $(install)'
 
 compile:
 	set -e
