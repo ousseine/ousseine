@@ -136,3 +136,5 @@ article pre { @apply rounded-md p-4 bg-gray-200 overflow-auto; }
 article ol { @apply list-decimal list-inside; }
 article ul { @apply list-disc list-inside; }
 article a { @apply text-blue-500; }
+article li ol,
+article li ul { @apply ml-4; }
